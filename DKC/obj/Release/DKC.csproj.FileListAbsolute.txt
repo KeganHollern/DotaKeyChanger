@@ -1,0 +1,9 @@
+E:\Visual Studio Work\DotaKeybindsChanger\DKC\bin\Release\DKC.exe.config
+E:\Visual Studio Work\DotaKeybindsChanger\DKC\bin\Release\DKC.exe
+E:\Visual Studio Work\DotaKeybindsChanger\DKC\bin\Release\DKC.pdb
+E:\Visual Studio Work\DotaKeybindsChanger\DKC\obj\Release\DKC.Form1.resources
+E:\Visual Studio Work\DotaKeybindsChanger\DKC\obj\Release\DKC.Properties.Resources.resources
+E:\Visual Studio Work\DotaKeybindsChanger\DKC\obj\Release\DKC.csproj.GenerateResource.cache
+E:\Visual Studio Work\DotaKeybindsChanger\DKC\obj\Release\DKC.csproj.CoreCompileInputs.cache
+E:\Visual Studio Work\DotaKeybindsChanger\DKC\obj\Release\DKC.exe
+E:\Visual Studio Work\DotaKeybindsChanger\DKC\obj\Release\DKC.pdb
