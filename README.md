@@ -8,7 +8,7 @@ IMPORTANT: Close dota before starting these steps
 1) Open DKC.exe
 2) Click "Steam DIR" button & select your steam install path (often C:\Program Files (x86)\Steam)
 3) Open https://steamid.co/ and find your main account's Steam 3 ID
-example: ![http://ss.lystic.net/Uploads/dX6v9Glg/4sZLVEeOSxDPZ9lo.png](http://ss.lystic.net/Uploads/dX6v9Glg/4sZLVEeOSxDPZ9lo.png)
+example: ![http://ss.lystic.net/Uploads/H97GXnu1/CSN10no65H8rshah.png](http://ss.lystic.net/Uploads/H97GXnu1/CSN10no65H8rshah.png)
 4) Select that steam id in the combo box. (This is the account that you are sourcing your keybinds from)
 5) Repeat steps 3-4 for the second combobox & select your ALT account
 6) Click "Copy Keybinds"
