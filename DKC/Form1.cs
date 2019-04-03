@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using System.IO.Compression;
 
 namespace DKC
 {
@@ -34,7 +35,7 @@ namespace DKC
                     int err = 0;
                     try
                     {
-                        ctrlMainAccountId.SelectedIndex = ctrlMainAccountId.FindString($"[U:1:{main_account}]");
+                        ctrlMainAccountId.SelectedIndex = ctrlMainAccountId.FindString($"Friend ID: {main_account}");
                         if(ctrlMainAccountId.SelectedIndex != -1)
                         {
                             ctrlNewAccountId.Enabled = true;
@@ -45,7 +46,7 @@ namespace DKC
                     }
                     try
                     {
-                        ctrlNewAccountId.SelectedIndex = ctrlNewAccountId.FindString($"[U:1:{new_account}]");
+                        ctrlNewAccountId.SelectedIndex = ctrlNewAccountId.FindString($"Friend ID: {new_account}");
                     }
                     catch { err++; }
                     if(err == 0)
@@ -78,8 +79,8 @@ namespace DKC
                     account_folder_names.Add(dir.ToLower().Replace(SteamDir.ToLower() + "userdata\\", ""));
                 }
 
-                ctrlMainAccountId.Items.AddRange(account_folder_names.Select((s) => { return $"[U:1:{s}]"; }).ToArray());
-                ctrlNewAccountId.Items.AddRange(account_folder_names.Select((s) => { return $"[U:1:{s}]"; }).ToArray());
+                ctrlMainAccountId.Items.AddRange(account_folder_names.Select((s) => { return $"Friend ID: {s}"; }).ToArray());
+                ctrlNewAccountId.Items.AddRange(account_folder_names.Select((s) => { return $"Friend ID: {s}"; }).ToArray());
                 ctrlMainAccountId.Enabled = true;
             }
             catch
@@ -105,6 +106,10 @@ namespace DKC
         private void ctrlMainAccountId_SelectedIndexChanged(object sender, EventArgs e)
         {
             ctrlNewAccountId.Enabled = true;
+
+            button3.Enabled = true;
+            button4.Enabled = true;
+
             main_account = account_folder_names.ElementAt(ctrlMainAccountId.SelectedIndex);
         }
 
@@ -178,6 +183,68 @@ namespace DKC
                     target.CreateSubdirectory(diSourceSubDir.Name);
                 CopyAll(diSourceSubDir, nextTargetSubDir);
             }
+        }
+
+        private void Form1_HelpButtonClicked(object sender, CancelEventArgs e)
+        {
+            e.Cancel = true;
+            HelpDialog hd = new HelpDialog();
+            hd.ShowDialog();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            //Export
+            SetStatus("Exporting keybinds...");
+            try
+            {
+                string main_folder = SteamDir + @"userdata\" + main_account + @"\570";
+                if (File.Exists($"dota_settings_{main_account}.zip"))
+                    File.Delete($"dota_settings_{main_account}.zip");
+                ZipFile.CreateFromDirectory(main_folder, $"dota_settings_{main_account}.zip");
+                SetStatus($"Exported dota_settings_{main_account}.zip");
+            }
+            catch (Exception ex)
+            {
+                SetStatus("Exporting failed!");
+            }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            //Import
+            if(openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                SetStatus("Importing keybinds...");
+                bool valid_backup = false;
+                string main_folder = SteamDir + @"userdata\" + main_account + @"\570";
+                string backup_path = Path.GetTempPath() + "dkc_backups\\" + main_account;
+                try
+                {
+                    //clean our previous backup
+                    Directory.Delete(backup_path, true);
+                    //create a backup
+                    Directory.Move(main_folder, backup_path);
+                    valid_backup = true;
+                    //extract our exported files
+                    ZipFile.ExtractToDirectory(openFileDialog1.FileName, main_folder);//does this replace?
+                    SetStatus("Import complete!");
+                }
+                catch (Exception ex)
+                {
+                    //incase the extract corrupts something, replace the corrupt files w/ our backup
+                    if (valid_backup)
+                    {
+                        if (Directory.Exists(main_folder))
+                        {
+                            Directory.Delete(main_folder, true);
+                            Directory.Move(backup_path, main_folder);
+                        }
+                    }
+                    SetStatus("Failed to import settings!");
+                }
+            }
+            
         }
     }
 }

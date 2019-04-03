@@ -8,3 +8,16 @@ E:\Visual Studio Work\DotaKeybindsChanger\DKC\obj\Debug\DKC.csproj.GenerateResou
 E:\Visual Studio Work\DotaKeybindsChanger\DKC\obj\Debug\DKC.csproj.CoreCompileInputs.cache
 E:\Visual Studio Work\DotaKeybindsChanger\DKC\obj\Debug\DKC.exe
 E:\Visual Studio Work\DotaKeybindsChanger\DKC\obj\Debug\DKC.pdb
+E:\GitHub\DotaKeyChanger\DKC\bin\Debug\DKC.exe.config
+E:\GitHub\DotaKeyChanger\DKC\bin\Debug\DKC.exe
+E:\GitHub\DotaKeyChanger\DKC\bin\Debug\DKC.pdb
+E:\GitHub\DotaKeyChanger\DKC\bin\Debug\System.IO.Compression.dll
+E:\GitHub\DotaKeyChanger\DKC\obj\Debug\DKC.csprojAssemblyReference.cache
+E:\GitHub\DotaKeyChanger\DKC\obj\Debug\DKC.Form1.resources
+E:\GitHub\DotaKeyChanger\DKC\obj\Debug\DKC.HelpDialog.resources
+E:\GitHub\DotaKeyChanger\DKC\obj\Debug\DKC.Properties.Resources.resources
+E:\GitHub\DotaKeyChanger\DKC\obj\Debug\DKC.csproj.GenerateResource.cache
+E:\GitHub\DotaKeyChanger\DKC\obj\Debug\DKC.csproj.CoreCompileInputs.cache
+E:\GitHub\DotaKeyChanger\DKC\obj\Debug\DKC.csproj.CopyComplete
+E:\GitHub\DotaKeyChanger\DKC\obj\Debug\DKC.exe
+E:\GitHub\DotaKeyChanger\DKC\obj\Debug\DKC.pdb
