@@ -26,3 +26,8 @@ You can back this up, send it to friends, or use this on another machine.
 To import, simply complete step 4 and click "Import". Select your exporting settings & you are done!
 
 Note, both of these features require you to have already launched dota under the account you are importing or exporting. 
+
+# Account Nicknames
+In version 1.0.2, nicknaming accounts was added. 
+
+Clicking the Nick button next to the selected account allows you to enter a nickname for the account. This should help you remember which account is which when using multiple accounts. 
