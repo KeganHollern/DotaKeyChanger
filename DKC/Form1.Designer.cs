@@ -42,6 +42,8 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -69,7 +71,7 @@
             this.ctrlMainAccountId.FormattingEnabled = true;
             this.ctrlMainAccountId.Location = new System.Drawing.Point(132, 41);
             this.ctrlMainAccountId.Name = "ctrlMainAccountId";
-            this.ctrlMainAccountId.Size = new System.Drawing.Size(194, 21);
+            this.ctrlMainAccountId.Size = new System.Drawing.Size(145, 21);
             this.ctrlMainAccountId.TabIndex = 2;
             this.ctrlMainAccountId.SelectedIndexChanged += new System.EventHandler(this.ctrlMainAccountId_SelectedIndexChanged);
             // 
@@ -79,7 +81,7 @@
             this.ctrlNewAccountId.FormattingEnabled = true;
             this.ctrlNewAccountId.Location = new System.Drawing.Point(132, 68);
             this.ctrlNewAccountId.Name = "ctrlNewAccountId";
-            this.ctrlNewAccountId.Size = new System.Drawing.Size(194, 21);
+            this.ctrlNewAccountId.Size = new System.Drawing.Size(145, 21);
             this.ctrlNewAccountId.TabIndex = 3;
             this.ctrlNewAccountId.SelectedIndexChanged += new System.EventHandler(this.ctrlNewAccountId_SelectedIndexChanged);
             // 
@@ -118,7 +120,7 @@
             this.label3});
             this.statusStrip1.Location = new System.Drawing.Point(0, 124);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(341, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(336, 22);
             this.statusStrip1.TabIndex = 8;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -156,11 +158,33 @@
             this.openFileDialog1.FileName = "dota_settings.zip";
             this.openFileDialog1.Filter = "Zip|*.zip";
             // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(283, 41);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(43, 23);
+            this.button5.TabIndex = 11;
+            this.button5.Text = "Nick";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.Button5_Click);
+            // 
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(283, 66);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(43, 23);
+            this.button6.TabIndex = 12;
+            this.button6.Text = "Nick";
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.Button6_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(341, 146);
+            this.ClientSize = new System.Drawing.Size(336, 146);
+            this.Controls.Add(this.button6);
+            this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.statusStrip1);
@@ -201,6 +225,8 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button button6;
     }
 }
 
