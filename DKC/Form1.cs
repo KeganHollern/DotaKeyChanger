@@ -39,6 +39,8 @@ namespace DKC
                         if(ctrlMainAccountId.SelectedIndex != -1)
                         {
                             ctrlNewAccountId.Enabled = true;
+                            button3.Enabled = true;
+                            button4.Enabled = true;
                         }
                     } catch
                     {
