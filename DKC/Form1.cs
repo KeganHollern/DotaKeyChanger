@@ -81,7 +81,7 @@ namespace DKC
         }
 
         //Settings functionality
-        public void InitializeFromSettingsFile()
+        private void InitializeFromSettingsFile()
         {
             try
             {
@@ -109,8 +109,8 @@ namespace DKC
         }
 
         //Gui functionality
-        public delegate void SetStatusCallback(string status);
-        public void SetStatus(string status)
+        private delegate void SetStatusCallback(string status);
+        private void SetStatus(string status)
         {
             if(label1.InvokeRequired)
             {
@@ -174,7 +174,7 @@ namespace DKC
 
         private void Form1_HelpButtonClicked(object sender, CancelEventArgs e)
         {
-            e.Cancel = true;
+            e.Cancel = true; //we dont want the help cursor, so cancel this event
             HelpDialog hd = new HelpDialog();
             hd.ShowDialog();
         }
@@ -219,6 +219,7 @@ namespace DKC
 
         private void Button6_Click(object sender, EventArgs e)
         {
+            
             string nick = Microsoft.VisualBasic.Interaction.InputBox("Enter the nickname for this account", "Nickname", "Alt account");
             if (nick == "")
                 return;

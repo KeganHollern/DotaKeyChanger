@@ -35,14 +35,28 @@ namespace DKC.Backend
             return Nickname;
         }
 
+        public string NickOrId()
+        {
+            if (!AccountNicks.ContainsKey(FriendID))
+                return FriendID;
+
+            return AccountNicks[FriendID];
+        }
+
 
         public bool ExportSettings(string zip_path = "")
         {
+            string tag = NickOrId();
+            foreach(char c in Path.GetInvalidFileNameChars())
+            {
+                tag = tag.Replace(c.ToString(), "");
+            }
+
             try
             {
-                if (File.Exists($"dota_settings_{FriendID}.zip"))
-                    File.Delete($"dota_settings_{FriendID}.zip");
-                ZipFile.CreateFromDirectory(SettingsPath, $"dota_settings_{FriendID}.zip");
+                if (File.Exists($"dota_settings_{tag}.zip"))
+                    File.Delete($"dota_settings_{tag}.zip");
+                ZipFile.CreateFromDirectory(SettingsPath, $"dota_settings_{tag}.zip");
 
                 return true;
             }
@@ -54,12 +68,21 @@ namespace DKC.Backend
         public bool ImportSettings(string zip_path)
         {
             bool valid_backup = false;
-            string backup_path = Path.GetTempPath() + "dkc_backups\\" + FriendID;
+            string backups_folder = Path.GetTempPath() + "dkc_backups";
+            string backup_path = $"{backups_folder}\\" + FriendID;
+
+            //this makes sure everyhting except the friend ID folder exists (required for Directory.Move)
+            if (!Directory.Exists(backups_folder))
+            {
+                Directory.CreateDirectory(backups_folder);
+            }
+
             try
             {
                 //clean our previous backup
-                Directory.Delete(backup_path, true);
-                //create a backup
+                if(Directory.Exists(backup_path))
+                    Directory.Delete(backup_path, true);
+
                 Directory.Move(SettingsPath, backup_path);
                 valid_backup = true;
                 //extract our exported files

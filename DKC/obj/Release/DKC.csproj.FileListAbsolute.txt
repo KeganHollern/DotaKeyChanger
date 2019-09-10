@@ -18,4 +18,3 @@ E:\GitHub\DotaKeyChanger\DKC\obj\Release\DKC.exe
 E:\GitHub\DotaKeyChanger\DKC\obj\Release\DKC.pdb
 E:\GitHub\DotaKeyChanger\DKC\obj\Release\DKC.HelpDialog.resources
 E:\GitHub\DotaKeyChanger\DKC\obj\Release\DKC.csproj.CopyComplete
-E:\GitHub\DotaKeyChanger\DKC\obj\Release\DKC.csprojAssemblyReference.cache

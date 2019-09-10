@@ -21,7 +21,14 @@ namespace DKC.Backend
         private string _Folder;
         public string UserDataFolder {
             get {
-                return Folder + @"\userdata";
+                if (Folder.EndsWith(@"\"))
+                {
+                    return Folder + "userdata";
+                }
+                else
+                {
+                    return Folder + @"\userdata";
+                }
             }
         }
 
