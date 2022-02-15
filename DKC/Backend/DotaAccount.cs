@@ -8,13 +8,23 @@ using System.Threading.Tasks;
 
 namespace DKC.Backend
 {
-    class DotaAccount
+    public class DotaAccount
     {
         public static Dictionary<string, string> AccountNicks = new Dictionary<string, string>();
 
         private SteamFolder Source;
         public string FriendID { get; set; }
-        public string SettingsPath { get { return Source.UserDataFolder + @"\" + FriendID + @"\570"; } }
+        public string SettingsPath { 
+            get {
+                string folder = Source.UserDataFolder + @"\" + FriendID + @"\570";
+                try
+                {
+                    if (!Directory.Exists(folder))
+                        Directory.CreateDirectory(folder);
+                }
+                catch { }
+                return folder; } 
+        }
         public string Nickname {
             get {
                 if (!AccountNicks.ContainsKey(FriendID))
@@ -52,11 +62,14 @@ namespace DKC.Backend
                 tag = tag.Replace(c.ToString(), "");
             }
 
+            string filename = $"dota_settings_{tag}.zip";
+            if (zip_path != "") filename = zip_path;
+
             try
             {
-                if (File.Exists($"dota_settings_{tag}.zip"))
-                    File.Delete($"dota_settings_{tag}.zip");
-                ZipFile.CreateFromDirectory(SettingsPath, $"dota_settings_{tag}.zip");
+                if (File.Exists(filename))
+                    File.Delete(filename);
+                ZipFile.CreateFromDirectory(SettingsPath, filename);
 
                 return true;
             }

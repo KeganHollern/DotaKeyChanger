@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DKC.Backend
 {
-    class SteamFolder
+    public class SteamFolder
     {
         public string Folder {
             get {
@@ -39,10 +39,10 @@ namespace DKC.Backend
                 {
                     return new DotaAccount(this, account_id);
 
-                }).Where((dc) => 
+                })/*.Where((dc) => 
                 {
                     return Directory.Exists(dc.SettingsPath);
-                });
+                })*/;
             }
         }
 
@@ -51,7 +51,13 @@ namespace DKC.Backend
 
         protected void FolderChanged(string path)
         {
-            UserAccounts = Directory.EnumerateDirectories(UserDataFolder).Select((s) => { return s.ToLower().Replace(UserDataFolder.ToLower() + "\\", ""); }) ;
+            try
+            {
+                UserAccounts = Directory.EnumerateDirectories(UserDataFolder).Select((s) => { return s.ToLower().Replace(UserDataFolder.ToLower() + "\\", ""); });
+            } catch
+            {
+                UserAccounts = Enumerable.Empty<string>();
+            }
             OnSteamFolderChanged?.Invoke(this, new EventArgs());
         }
 
