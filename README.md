@@ -1,33 +1,22 @@
-# DotaKeyChanger 
-![https://ss.lystic.dev/Uploads/A5Hc3z3T/rqqsCwyxM9rQd46d.png](https://ss.lystic.dev/Uploads/A5Hc3z3T/rqqsCwyxM9rQd46d.png)
+# Dota 2 Keybinds Changer 
+![https://kegan-screenshot.ewr1.vultrobjects.com/2022-02-16/22-02-37/FgJu3Ys6xu6uFdV2UGUPaYAC.png](https://kegan-screenshot.ewr1.vultrobjects.com/2022-02-16/22-02-37/FgJu3Ys6xu6uFdV2UGUPaYAC.png)
 
-Copy your dota keybinds and settings from one steam account to another.
+![https://kegan-screenshot.ewr1.vultrobjects.com/2022-02-16/22-03-59/ThgeC8bRKw32QKJb85RiX8EG.png](https://kegan-screenshot.ewr1.vultrobjects.com/2022-02-16/22-03-59/ThgeC8bRKw32QKJb85RiX8EG.png)
 
-- notes, if you have never launched dota on your alt account, launch it before doing this process -
+Automatically copy your dota keybinds and settings from one steam account to another.
 
-IMPORTANT: Close dota before starting these steps
+## Automatic Keybind Transfer
 
-1) Open DKC.exe
-2) Click "Steam DIR" button & select your steam install path (often C:\Program Files (x86)\Steam)
-3) Open dota on your main account and find your friend Id. This is displayed on your in-game profile.
-4) Select that friend id in the combo box. (This is the account that you are sourcing your keybinds from)
-5) Repeat steps 3-4 for the second combobox & select your ALT account
-6) Click "Copy Keybinds"
+To transfer keybinds, you must set the source keybind set. This is done by logging in to your main steam account and clicking "Set Primary Keybinds".
 
+After this step, keybinds will automatically transfer to any steam account you log in to. This transfer happens 5 seconds after login. 
 
+If keybinds do not automatically transfer, you can manually transfer them. Close Dota and click "Transfer Keybinds" to set your current keybinds to the Primary Set.
 
+## Keybind Backups
 
-# Importing & Exporting
-In version 1.0.1, importing and exporting was added. This works off your Main account. 
+You can create backups for your individual accounts keybinds. This protects you from accidentally overwriting keybinds that you wanted to save. 
 
-After completing step 4, you can click "Export" and your dota settings will be saved into the same directory as DKC.exe
-You can back this up, send it to friends, or use this on another machine. 
+Click "Backup" to create a backup. This step is automatically done when setting your Primary Keybinds. 
 
-To import, simply complete step 4 and click "Import". Select your exporting settings & you are done!
-
-Note, both of these features require you to have already launched dota under the account you are importing or exporting. 
-
-# Account Nicknames
-In version 1.0.2, nicknaming accounts was added. 
-
-Clicking the Nick button next to the selected account allows you to enter a nickname for the account. This should help you remember which account is which when using multiple accounts. 
+Click "Restore" to restore from a backup. Restore is only available if a backup has been created. 
