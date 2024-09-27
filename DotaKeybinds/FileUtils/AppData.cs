@@ -78,7 +78,10 @@ namespace DotaKeybinds.FileUtils
             {
                 // restore our keybinds from the backup we took
                 Directory.Delete(destination, true);
-                Directory.Move(backup_path, destination);
+                // BUGFIX: cannot Directory.Move across drives... (why would these ever be in different drives? idk!)
+                DirectoryCopy(backup_path, destination, true);
+                Directory.Delete(backup_path, true);
+
                 // throw exception & wrap the exception we actually had
                 throw new Exception("Failed to extract backup", ex);
             }
@@ -86,7 +89,7 @@ namespace DotaKeybinds.FileUtils
         }
         public static bool CreateBackup(string steamid, string source)
         {
-            if(HasBackup(steamid))
+            if (HasBackup(steamid))
             {
                 File.Delete(GetBackupPath(steamid));
             }
@@ -101,6 +104,37 @@ namespace DotaKeybinds.FileUtils
             File.Copy(GetBackupPath(steamid), GetKeybindsPath(), true);
 
             return true;
+        }
+
+        public static void DirectoryCopy(string sourceDirName, string destDirName, bool copySubDirs)
+        {
+            DirectoryInfo dir = new DirectoryInfo(sourceDirName);
+
+            if (!dir.Exists)
+            {
+                throw new DirectoryNotFoundException(
+                    "Source directory does not exist or could not be found: "
+                    + sourceDirName);
+            }
+
+            DirectoryInfo[] dirs = dir.GetDirectories();
+            Directory.CreateDirectory(destDirName);
+
+            FileInfo[] files = dir.GetFiles();
+            foreach (FileInfo file in files)
+            {
+                string temppath = Path.Combine(destDirName, file.Name);
+                file.CopyTo(temppath, false);
+            }
+
+            if (copySubDirs)
+            {
+                foreach (DirectoryInfo subdir in dirs)
+                {
+                    string temppath = Path.Combine(destDirName, subdir.Name);
+                    DirectoryCopy(subdir.FullName, temppath, copySubDirs);
+                }
+            }
         }
     }
 }
