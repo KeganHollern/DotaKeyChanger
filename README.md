@@ -1,22 +1,29 @@
-# Dota 2 Keybinds Changer 
-![https://kegan-screenshot.ewr1.vultrobjects.com/2022-02-16/22-02-37/FgJu3Ys6xu6uFdV2UGUPaYAC.png](https://kegan-screenshot.ewr1.vultrobjects.com/2022-02-16/22-02-37/FgJu3Ys6xu6uFdV2UGUPaYAC.png)
+# Dota 2 Keybinds Changer
 
-![https://kegan-screenshot.ewr1.vultrobjects.com/2022-02-16/22-03-59/ThgeC8bRKw32QKJb85RiX8EG.png](https://kegan-screenshot.ewr1.vultrobjects.com/2022-02-16/22-03-59/ThgeC8bRKw32QKJb85RiX8EG.png)
+![Keybinds Screenshot 1](https://ss.lystic.zip/2022-02-16/22-02-37/FgJu3Ys6xu6uFdV2UGUPaYAC.png)
+![Keybinds Screenshot 2](https://ss.lystic.zip/2022-02-16/22-03-59/ThgeC8bRKw32QKJb85RiX8EG.png)
 
-Automatically copy your dota keybinds and settings from one steam account to another.
+Easily copy your Dota 2 keybinds and settings between Steam accounts.
 
 ## Automatic Keybind Transfer
 
-To transfer keybinds, you must set the source keybind set. This is done by logging in to your main steam account and clicking "Set Primary Keybinds".
+1. **Set Primary Keybinds**:
+   - Log in to your main Steam account.
+   - Click "Set Primary Keybinds".
 
-After this step, keybinds will automatically transfer to any steam account you log in to. This transfer happens 5 seconds after login. 
+2. **Automatic Transfer**:
+   - Keybinds will transfer automatically to any Steam account you log in to, 5 seconds post-login.
 
-If keybinds do not automatically transfer, you can manually transfer them. Close Dota and click "Transfer Keybinds" to set your current keybinds to the Primary Set.
+3. **Manual Transfer**:
+   - If automatic transfer fails, close Dota 2.
+   - Click "Transfer Keybinds" to apply the Primary Set to the current account.
 
 ## Keybind Backups
 
-You can create backups for your individual accounts keybinds. This protects you from accidentally overwriting keybinds that you wanted to save. 
+1. **Create Backup**:
+   - Click "Backup" to save the keybinds for the current account.
+   - Backup is automatically created when setting Primary Keybinds.
 
-Click "Backup" to create a backup. This step is automatically done when setting your Primary Keybinds. 
-
-Click "Restore" to restore from a backup. Restore is only available if a backup has been created. 
+2. **Restore Backup**:
+   - Click "Restore" to revert to a previously created backup.
+   - Restore is available only if a backup exists.
